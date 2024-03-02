@@ -5,6 +5,13 @@ function git_log_full_hash() {
 }
 
 COMMIT_HASHES=`git_log_full_hash`
+
+# If git commit doesn't work
+if [[ "$?" != "0" ]]; then
+  echo "Script cannot proceed."
+  exit 1
+fi
+
 FIRST_COMMIT_HASH=`git_log_full_hash | head -n1`
 EMPTY_TREE_HASH="4b825dc642cb6eb9a060e54bf8d69288fbee4904"
 
