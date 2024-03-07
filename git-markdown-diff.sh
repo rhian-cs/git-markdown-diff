@@ -1,5 +1,17 @@
 #!/bin/bash
 
+####                      Usage                     ####
+#
+#  git markdown-diff {{start_commit}} {{end commit}}
+#
+#  Examples:
+#    git markdown-diff
+#    git markdown-diff 4af405e
+#    git markdown-diff 4af405e 610ecbc
+#
+########################################################
+
+
 ####     Validate if Git Works     ####
 git status > /dev/null
 if [[ "$?" != "0" ]]; then
